@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const ButtonComponent = () => {
   const handleUserButtonClick = () => {
@@ -12,11 +13,17 @@ const ButtonComponent = () => {
     // Add your admin button logic here
   };
 
+  const handleSignUpButtonClick = () => {
+    console.log('Sign Up Button Clicked');
+    // Add your sign up button logic here
+  };
+
   return (
     <div style={styles.container}>
       <motion.div style={styles.card}>
         <h2 style={styles.title}>Login as</h2>
         <div style={styles.buttonContainer}>
+          <Link to="/sign-in">
           <motion.button
             onClick={handleUserButtonClick}
             style={styles.button}
@@ -25,15 +32,29 @@ const ButtonComponent = () => {
           >
             User
           </motion.button>
+          </Link>
+          <Link to="/sign-in">
           <motion.button
-            onClick={handleAdminButtonClick}
+            
             style={styles.button}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
             Admin
           </motion.button>
+          </Link>
         </div>
+        <div style={styles.line} />
+        <Link to="/sign-up">
+        <motion.button
+          onClick={handleSignUpButtonClick}
+          style={{ ...styles.button, background: '#ff9900' }}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+        >
+          Sign Up
+        </motion.button>
+        </Link>
       </motion.div>
     </div>
   );
@@ -66,6 +87,7 @@ const styles = {
   },
   buttonContainer: {
     display: 'flex',
+    marginBottom: '10px',
   },
   button: {
     margin: '10px',
@@ -77,6 +99,12 @@ const styles = {
     background: '#009B37',
     color: '#fff',
     cursor: 'pointer',
+  },
+  line: {
+    width: '100%',
+    height: '1px',
+    background: '#ccc',
+    margin: '10px 0',
   },
 };
 

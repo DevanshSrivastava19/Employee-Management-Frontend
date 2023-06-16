@@ -5,6 +5,8 @@ import HeaderComponent from './components/HeaderComponent';
 import FooterComponent from './components/FooterComponent';
 import MainPage from './components/MainPage';
 import LoginForm from './components/LoginForm';
+import Sidebar from './components/Sidebar';
+import CreateEmployeeFrontend from './components/CreateEmployeeFrontend';
 function App() {
   return (
     <div>
@@ -14,6 +16,7 @@ function App() {
           <Route path="/all-employee" element={<ListEmployeeComponent/>}/>
           <Route path="/" element={<MainPage/>}/>
           <Route path="/sign-in" element={<LoginForm/>}/>
+          <Route path="/sign-up" element={<CreateEmployeeFrontend/>}/>
         </Routes>
       </Router>
       <FooterComponent/>
@@ -22,5 +25,4 @@ function App() {
 }
 
 export default App;
-
 
